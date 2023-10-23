@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D68181"
+    android:backgroundTint="#C88D8D"
+    tools:context=".MainActivity"
+    android:padding="100px">
+    <LinearLayout
+        android:id="@+id/LLusuario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="150px"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre de usuario: "
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:paddingTop="100px"/>
+        <EditText
+            android:id="@+id/ETusu"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:inputType="text"
+            android:hint="Escribe aqui tu usuario"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="150px"
+            android:text="Contraseña: "
+            android:textSize="25dp"
+            android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/ETpass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Escribe aqui tu contraseña"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btnEnviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150px"
+            android:text="ENVIAR"
+            android:layout_gravity="center"
+            android:padding="20px"/>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
