@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="StringUsuario">Nombre de usuario: </string>
+    <string name="StringContraseña">Contraseña: </string>
+    <string name="stringBtnEnviar">ENVIAR</string>
+    <string name="hintUsuario">Escribe aqui tu usuario</string>
+    <string name="hintPass">Escribe aqui tu contraseña</string>
+
+
+</resources>

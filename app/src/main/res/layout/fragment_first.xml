@@ -23,8 +23,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintStart_toEndOf="@+id/tvBienvenido"
+        app:layout_constraintEnd_toStartOf="@+id/LLfil"
         android:paddingTop="250px"
-        >
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:layout_width="150dp"

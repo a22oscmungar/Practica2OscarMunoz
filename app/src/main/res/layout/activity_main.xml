@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre de usuario: "
+            android:text="@string/StringUsuario"
             android:textSize="25dp"
             android:textStyle="bold"
             android:paddingTop="100px"/>
@@ -28,14 +28,14 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:inputType="text"
-            android:hint="Escribe aqui tu usuario"
+            android:hint="@string/hintUsuario"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="150px"
-            android:text="Contraseña: "
+            android:text="@string/StringContraseña"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
@@ -43,7 +43,7 @@
             android:id="@+id/ETpass"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Escribe aqui tu contraseña"
+            android:hint="@string/hintPass"
             android:inputType="textPassword" />
 
         <Button
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150px"
-            android:text="ENVIAR"
+            android:text="@string/stringBtnEnviar"
             android:layout_gravity="center"
             android:padding="20px"/>
 

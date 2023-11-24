@@ -3,7 +3,10 @@ package com.example.exercici1;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,8 +35,24 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //PRIMERO GUARDAMOS EN LA BASE DE DATOS
+                DataBaseHelper dbHelper = new DataBaseHelper(MainActivity.this);
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+                //AHORA AGREGAMOS LOS VALORES
+                ContentValues values = new ContentValues();
+                values.put(DataBaseHelper.COLUMN_NOMBRE, etUsu.getText().toString());
+                values.put(DataBaseHelper.COLUMN_PASS, etPass.getText().toString());
+
+                //ESTO HACE EL INSERT
+                long newRowId = db.insert(DataBaseHelper.TABLE_NAME, null, values);
+
+                //Y CERRAR CONEXION
+                db.close();
+
+                //AQUI HAREMOS EL INTENT PARA EL BASIC ACTIVITY
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("usuario",etUsu.getText().toString());
+
                 startActivity(intent);
             }
         });

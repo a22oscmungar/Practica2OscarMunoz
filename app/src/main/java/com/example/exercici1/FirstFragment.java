@@ -1,6 +1,7 @@
 package com.example.exercici1;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,18 +34,6 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        tvUsu = view.findViewById(R.id.tvBienvenido);
-
-        Bundle args = getArguments();
-
-        if (args != null) {
-            // Obtener el nombre de usuario de los argumentos
-            String usuario = args.getString("usuario");
-
-            // Configurar el mensaje de bienvenida con el nombre de usuario
-            String mensajeBienvenida = "Bienvenido, " + usuario;
-            tvUsu.setText(mensajeBienvenida);
-        }
 
     /*
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {

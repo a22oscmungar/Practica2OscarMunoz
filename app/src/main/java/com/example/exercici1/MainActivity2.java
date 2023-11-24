@@ -1,11 +1,14 @@
 package com.example.exercici1;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -29,22 +32,34 @@ public class MainActivity2 extends AppCompatActivity {
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        String usuario = getIntent().getStringExtra("usuario");
+        DataBaseHelper dbHelper = new DataBaseHelper(MainActivity2.this);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+        String[] values = {
+                DataBaseHelper.COLUMN_NOMBRE,
+                DataBaseHelper.COLUMN_PASS
+        };
 
-// Crear un Bundle para pasar argumentos al fragmento
-        Bundle args = new Bundle();
-        args.putString("usuario", usuario);
+        Cursor cursor = db.query(
+                DataBaseHelper.TABLE_NAME,
+                values,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
 
-// Crear una instancia del FirstFragment y establecer los argumentos
-        FirstFragment fragment = new FirstFragment();
-        fragment.setArguments(args);
+        if (cursor != null && cursor.moveToFirst()) {
+            String nombre = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseHelper.COLUMN_NOMBRE));
+            String pass = cursor.getString(cursor.getColumnIndexOrThrow(DataBaseHelper.COLUMN_PASS));
 
-// Reemplazar el contenido del fragmento con el FirstFragment
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.nav_host_fragment_content_main, fragment)
-                .commit();
+            Log.d("prueba sqlite", nombre + " " + pass);
+        }
 
+        if(cursor != null){
+            db.close();
+        }
 
         setSupportActionBar(binding.toolbar);
 
