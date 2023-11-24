@@ -2,6 +2,7 @@ package com.example.exercici1;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -31,6 +32,9 @@ public class MainActivity2 extends AppCompatActivity {
 
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        MediaPlayer mp = MediaPlayer.create(this, R.raw.cancion);
+        mp.start();
 
         DataBaseHelper dbHelper = new DataBaseHelper(MainActivity2.this);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
